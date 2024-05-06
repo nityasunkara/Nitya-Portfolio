@@ -6,6 +6,9 @@ import { useInView } from 'react-intersection-observer';
 
 const About = () => {
   const { ref:downloadButtonCV, inView:downloadButtonCVVisible } = useInView();
+  const handleDownloadCV = () =>{
+    window.open("https://drive.google.com/file/d/10tuxsVu_mDqDu8uhO2uhTQZnXgKiDH4V/view?usp=sharing", "_blank");
+  }
   return (
     <div className="flex pt-[100px] w-full bg-[#FFFFFF] iPhoneSE:flex-col laptop:flex-row gap-0 iPhoneSE:gap-[15px] laptop:gap-0">
       <div className="w-1/2 iPhoneSE:w-full laptop:w-1/2 flex justify-center">
@@ -52,6 +55,7 @@ const About = () => {
         </table>
         <div className={`mb-0 iPhoneSE:mb-[20px] laptop:mb-0 ${downloadButtonCVVisible ? "animate-slide-up" : ""}`}>
           <Button
+            onClick={handleDownloadCV}
             sx={{
               color: "white",
               backgroundColor: "#FA6C2C",
